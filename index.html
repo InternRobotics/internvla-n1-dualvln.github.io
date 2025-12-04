@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7HS2043K1L"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-7HS2043K1L');
+  </script>
+
+  <!-- Primary Meta Tags -->
+  <!-- TODO: Replace with your paper title and author names -->
+  <meta name="title" content="Ground Slow, Move Fast: A Dual-System Foundation Model for Generalizable Vision-Language Navigation">
+  <!-- TODO: Write a compelling 150-160 character description of your research -->
+  <meta name="description" content="Ground Slow, Move Fast: A Dual-System Foundation Model for Generalizable Vision-Language Navigation">
+  <!-- TODO: Add 5-10 relevant keywords for your research area -->
+  <meta name="keywords" content="Navigation, VLN, VLM">
+  <!-- TODO: List all authors -->
+  <meta name="author" content="Meng Wei">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <!-- TODO: Replace with your institution or lab name -->
+  <meta property="og:site_name" content="Shanghai AI Laboratory">
+  <!-- TODO: Same as paper title above -->
+  <meta property="og:title" content="Ground Slow, Move Fast: A Dual-System Foundation Model for Generalizable Vision-Language Navigation">
+  <!-- TODO: Same as description above -->
+  <meta property="og:description" content="Ground Slow, Move Fast: A Dual-System Foundation Model for Generalizable Vision-Language Navigation">
+  <!-- TODO: Replace with your actual website URL -->
+  <meta property="og:url" content="https://dualvln.github.io">
+  <!-- TODO: Create a 1200x630px preview image and update path -->
+  <meta property="og:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="PAPER_TITLE - Research Preview">
+  <meta property="article:published_time" content="2024-01-01T00:00:00.000Z">
+  <meta property="article:author" content="FIRST_AUTHOR_NAME">
+  <meta property="article:section" content="Research">
+  <meta property="article:tag" content="KEYWORD1">
+  <meta property="article:tag" content="KEYWORD2">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- TODO: Replace with your lab/institution Twitter handle -->
+  <meta name="twitter:site" content="@YOUR_TWITTER_HANDLE">
+  <!-- TODO: Replace with first author's Twitter handle -->
+  <meta name="twitter:creator" content="@AUTHOR_TWITTER_HANDLE">
+  <!-- TODO: Same as paper title above -->
+  <meta name="twitter:title" content="PAPER_TITLE">
+  <!-- TODO: Same as description above -->
+  <meta name="twitter:description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
+  <!-- TODO: Same as social preview image above -->
+  <meta name="twitter:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
+  <meta name="twitter:image:alt" content="PAPER_TITLE - Research Preview">
+
+  <!-- Academic/Research Specific -->
+  <meta name="citation_title" content="PAPER_TITLE">
+  <meta name="citation_author" content="FIRST_AUTHOR_LAST, FIRST_AUTHOR_FIRST">
+  <meta name="citation_author" content="SECOND_AUTHOR_LAST, SECOND_AUTHOR_FIRST">
+  <meta name="citation_publication_date" content="2024">
+  <meta name="citation_conference_title" content="CONFERENCE_NAME">
+  <meta name="citation_pdf_url" content="https://YOUR_DOMAIN.com/static/pdfs/paper.pdf">
+  
+  <!-- Additional SEO -->
+  <meta name="theme-color" content="#2563eb">
+  <meta name="msapplication-TileColor" content="#2563eb">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://ajax.googleapis.com">
+  <link rel="preconnect" href="https://documentcloud.adobe.com">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
+
+  <!-- TODO: Replace with your paper title and authors -->
+  <title>Ground Slow, Move Fast: A Dual-System Foundation Model for Generalizable Vision-Language Navigation</title>
+  
+  <!-- Favicon and App Icons -->
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link rel="apple-touch-icon" href="static/images/favicon.ico">
+  
+  <!-- Critical CSS - Load synchronously -->
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  
+  <!-- Non-critical CSS - Load asynchronously -->
+  <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  
+  <!-- Fallback for browsers that don't support preload -->
+  <noscript>
+    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  </noscript>
+  
+  <!-- Fonts - Optimized loading -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Defer non-critical JavaScript -->
+  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script defer src="static/js/bulma-carousel.min.js"></script>
+  <script defer src="static/js/bulma-slider.min.js"></script>
+  <script defer src="static/js/index.js"></script>
+  
+  <!-- Structured Data for Academic Papers -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "headline": "PAPER_TITLE",
+    "description": "BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS",
+    "author": [
+      {
+        "@type": "Person",
+        "name": "FIRST_AUTHOR_NAME",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "INSTITUTION_NAME"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "SECOND_AUTHOR_NAME",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "INSTITUTION_NAME"
+        }
+      }
+    ],
+    "datePublished": "2024-01-01",
+    "publisher": {
+      "@type": "Organization",
+      "name": "CONFERENCE_OR_JOURNAL_NAME"
+    },
+    "url": "https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE",
+    "image": "https://YOUR_DOMAIN.com/static/images/social_preview.png",
+    "keywords": ["KEYWORD1", "KEYWORD2", "KEYWORD3", "machine learning", "computer vision"],
+    "abstract": "FULL_ABSTRACT_TEXT_HERE",
+    "citation": "BIBTEX_CITATION_HERE",
+    "isAccessibleForFree": true,
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "mainEntity": {
+      "@type": "WebPage",
+      "@id": "https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE"
+    },
+    "about": [
+      {
+        "@type": "Thing",
+        "name": "RESEARCH_AREA_1"
+      },
+      {
+        "@type": "Thing", 
+        "name": "RESEARCH_AREA_2"
+      }
+    ]
+  }
+  </script>
+  
+  <!-- Website/Organization Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "INSTITUTION_OR_LAB_NAME",
+    "url": "https://YOUR_INSTITUTION_WEBSITE.com",
+    "logo": "https://YOUR_DOMAIN.com/static/images/favicon.ico",
+    "sameAs": [
+      "https://twitter.com/YOUR_TWITTER_HANDLE",
+      "https://github.com/YOUR_GITHUB_USERNAME"
+    ]
+  }
+  </script>
+</head>
+<body>
+
+
+  <!-- Scroll to Top Button -->
+  <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+
+  <main id="main-content">
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <!-- TODO: Replace with your paper title -->
+            <h1 class="title is-2 publication-title">Ground Slow, Move Fast: A Dual-System Foundation Model for Generalizable Vision-Language Navigation</h1>
+            
+            <div class="is-size-5 publication-authors">
+              <!-- TODO: Replace with your paper authors and their personal links -->
+              <span class="author-block">
+                <a href="https://scholar.google.com.hk/citations?user=Wx8ChLcAAAAJ" target="_blank">Meng Wei<sup>1, 2</sup></a>,
+              </span>
+              <span class="author-block">
+               <a href="https://bryce-wan.github.io/" target="_blank">Chenyang Wan<sup>1, 3</sup></a>,
+              </span>
+              <span class="author-block">
+                <a href="https://steinate.github.io/" target="_blank">Jiaqi Peng<sup>1, 4</sup></a>,
+              </span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=CKWKIscAAAAJ" target="_blank">Xiqian Yu<sup>1</sup></a>,
+              </span>
+              <span class="author-block">
+                <a href="https://yuqiang-yang.github.io/" target="_blank">Yuqiang Yang<sup>1</sup></a>,
+              </span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=YwMy11sAAAAJ" target="_blank">Delin Feng<sup>1</sup></a>,
+              </span>
+              <span class="author-block">
+                <a href="https://wzcai99.github.io/" target="_blank">Wenzhe Cai<sup>1</sup></a>,
+              </span>
+              <span class="author-block">
+                <a href="https://zcmax.github.io/"" target="_blank">Chenming Zhu<sup>1, 2</sup></a>,
+              </span>
+              <span class="author-block">
+                <a href="https://steinate.github.io/" target="_blank">Tai Wang<sup>1, &dagger;</sup></a>,
+              </span>
+              <span class="author-block">
+                <a href="https://oceanpang.github.io/" target="_blank">Jiangmiao Pang<sup>1, &#x2709;</sup></a>,
+              </span>
+              <span class="author-block">
+                <a href="https://xh-liu.github.io/" target="_blank">Xihui Liu<sup>2, &#x2709;</sup></a>,
+              </span>
+            </div>
+
+                  <div class="is-size-5 publication-authors">
+                    <!-- TODO: Replace with your institution and conference/journal info -->
+                    <!-- <span class="author-block">Shanghai AI Lab<sup>1</sup>, 
+                      Hongkong 
+                      <br>arXiv Preprint</span> -->
+
+                    <span class="author-block"><sup>1</sup>Shanghai AI Laboratory,</span>
+                    <span class="author-block"><sup>2</sup>The University of Hong Kong,</span>
+                    <span class="author-block"><sup>3</sup>Zhejiang University,</span>
+                    <span class="author-block"><sup>4</sup>Tsinghua University,</span>
+                    <!-- TODO: Remove this line if no equal contribution -->
+                    <span class="eql-cntrb"><br><sup>&dagger;</sup> Project Lead, <sup>&#x2709;</sup> Corresponding Author</span>
+                    <!-- <span class="eql-cntrb"><br><sup>&dagger;</sup>Indicates Project Lead</span> -->
+                    <!-- <span class="eql-cntrb"><br><sup>&#x2709;</sup>Indicates Corresponding Author</span> -->
+
+                  </div>
+
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+
+                      <!-- TODO: Update with your arXiv paper ID -->
+                      <span class="link-block">
+                        <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="ai ai-arxiv"></i>
+                        </span>
+                        <span>arXiv</span>
+                        </a>
+                      </span>
+
+                      <!-- TODO: Update with your arXiv paper ID -->
+                      <span class="link-block">
+                        <a href="https://internrobotics.github.io/internvla-n1.github.io/static/pdfs/InternVLA_N1.pdf" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Tech Report</span>
+                        </a>
+                      </span>
+
+                      <!-- TODO: Add your supplementary material PDF or remove this section
+                      <span class="link-block">
+                        <a href="static/pdfs/supplementary_material.pdf" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Supplementary</span>
+                        </a>
+                      </span> -->
+
+                      <!-- TODO: Replace with your GitHub repository URL -->
+                      <span class="link-block">
+                        <a href="https://github.com/InternRobotics/InternNav" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fab fa-github"></i>
+                        </span>
+                        <span>Code</span>
+                        </a>
+                      </span>
+
+                      <!-- TODO: Replace with your data URL -->
+                      <span class="link-block">
+                        <a href="https://huggingface.co/datasets/InternRobotics/InternData-N1" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fa fa-database"></i>
+                        </span>
+                        <span>Data</span>
+                        </a>
+                      </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Teaser video-->
+<section class="hero teaser">
+  <div class="container is-max-desktop is-centered has-text-centered">
+    <div class="hero-body">
+      <!-- TODO: Replace with your teaser video -->
+      <!-- <video poster="" id="tree" autoplay controls muted loop height="100%" preload="metadata"> -->
+        <!-- TODO: Add your video file path here -->
+        <!-- <source src="static/videos/banner_video.mp4" type="video/mp4"> -->
+      <!-- </video> -->
+      <!-- TODO: Replace with your video description -->
+      <!-- <h2 class="subtitle has-text-centered"> -->
+        <!-- Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus.  -->
+      <!-- </h2> -->
+      <div class="publication-video">
+        <iframe src="https://www.youtube.com/embed/aAlG7gZHhe0?si=cPOfGhdUaHFM6Fdz"
+                frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
+      <br/>
+      <h2 class="title is-5">TL; DR</h2>
+      <div class="content has-text-justified">
+        <p>
+          We propose <b>DualVLN</b>, a dual-system foundation model for Vision-Language Navigation, which includes:
+        <ul>
+          <li><b>System 2</b>: a large foundation VLM, performs slow but robust reasoning and produces explicit <b>pixel goals</b>.</li>
+          <li><b>System 1</b>: a lightweight diffusion policy, generates smooth and safe <b>trajectories</b> in real time.</li>
+        </ul>
+        </p>
+
+      </div>
+
+      <!-- <img src="./static/images/overview.png" alt="method" style="width: 75%;"></img> -->
+      <img alt="overview" src="./static/images/teaser.jpg" style="border: 2px dashed #cccccc;"/>
+      <text style="font-size: 12px; color: #666;">Overview of DualVLN.</text>
+
+    </div>
+  </div>
+</section>
+<!-- End teaser video -->
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <!-- TODO: Replace with your paper abstract -->
+          <p>
+            While recent large vision-language models (VLMs) have improved generalization in vision-language navigation (VLN), existing methods typically rely on end-to-end pipelines that map vision-language inputs directly to short-horizon discrete actions. Such designs often produce fragmented motions, incur high latency, and struggle with real-world challenges like dynamic obstacle avoidance.
+            We propose DualVLN, the first dual-system VLN foundation model that synergistically integrates high-level reasoning with low-level action execution. <b>System 2</b>, a VLM-based global planner, “grounds slowly” by predicting mid-term waypoint goals via image-grounded reasoning. <b>System 1</b>, a lightweight, multi-modal conditioning Diffusion Transformer policy, “moves fast” by leveraging both explicit pixel goals and latent features from <b>System 2</b> to generate smooth and accurate trajectories. The dual-system design enables robust real-time control and adaptive local decision-making in complex, dynamic environments. By decoupling training, the VLM retains its generalization, while <b>System 1</b> achieves interpretable and effective local navigation. DualVLN outperforms prior methods across all VLN benchmarks
+            and real-world experiments demonstrate robust long-horizon planning and real-time adaptability in dynamic environments.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+
+
+<!-- Method -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="rows is-centered has-text-centered ">
+      <div class="row is-full-width">
+        <h2 class="title is-3 has-text-centered is-size-5-mobile title-with-lines">Approach</h2>
+        
+        <h3 class="title is-4 has-text-centered is-size-5-mobile">Dual-System Design for VLN</h3>
+        <!-- <img src="./static/images/overview.png" alt="method" style="width: 75%;"></img> -->
+        <img alt="overview" src="./static/images/framework.jpg" style="border: 2px dashed #cccccc;"/>
+        <text style="font-size: 12px; color: #666;">Dual-System Framework.</text>
+        
+        <br/>
+        <br/>
+        
+        <div class="content has-text-justified">
+          <p>
+            <b>DualVLN</b> adopts a compositional architecture featuring a <b>dual-system</b> design that synergistically combines high-level instruction interpretation with low-level action execution. Specifically, DualVLN decouples the VLN pipeline into two complementary systems:
+          </p>
+          <ul>
+            <li><strong>System 2:</strong> A vision-language model (VLM)-based planning module that interprets navigation instructions to predict mid-term waypoint goals through image-grounded reasoning. By predicting pixel coordinates in the image space, it effectively connects instruction understanding with spatial reasoning, enabling long-horizon navigation instruction following.</li>
+            <li><strong>System 1:</strong> A multi-modal goal-conditioned diffusion policy guided by latent plan or supported explicit goals, which generates executable short-horizon trajectories conditioned on current observations and the asynchronous latent features from System 2. It enables robust, real-time control and local decision-making in complex environments.</li>
+          </ul>
+          <!-- <p>
+            To fully unlock open-world generalization and asynchronous inference capabilities in the dual-system architecture, we design a curriculum training scheme. Initially, each system is trained separately to acquire basic navigation skills using explicit goals in a synchronized setting. Then, a joint fine-tuning phase is introduced. In this phase, we incorporate learnable tokens into System 2 as implicit midterm goals to reduce the ambiguity of pixel-based targets. 
+          </p> -->
+        </div>
+
+        <!-- <h3 class="title is-4 has-text-centered is-size-5-mobile">Data Collection</h3>
+        <div class="columns is-vcentered" style="margin-top: 1.5rem;">
+          <div class="column is-8">
+            <div class="content has-text-justified" style="font-size: 17px; margin-bottom: 1em;">
+              <p>
+                We incorporates both <b>navigation-specific data</b> samples and <b>general multi-modal data</b> samples in our training data.
+              </p>
+              <p>  
+                For <b>navigation-specific data</b>, we collect 450K video clips from R2R, R2R-EnvDrop, RxR and ScaleVLN as expert training data, and 240K DAgger data samples as augmentation.
+              </p>  
+                For <b>general multi-modal data</b>, we incorporate 248K video-based VQA samples from LLaVA-Video-178K and ScanQA, and 230K interleaved image-text samples from MMC4.
+              </p>
+              <p>
+                The table below shows details of our data compositiion.
+              </p>
+
+            </div>
+          </div>
+          <div class="column is-4">
+            <img src="./static/images/data_recipe.png" alt="data" style="width:100%; max-width: 800px; display: block; margin-left: auto;">
+            <text style="font-size: 12px; color: #666;">Our data recipe.</text>
+          </div>
+        </div>
+
+        <div class="table-container" style="margin: 2rem 0;">
+          <table class="table is-bordered" style="width: 100%; border-collapse: collapse; font-size: 0.9em;">
+            <thead>
+              <tr>
+                <th style="border-top: 4px solid #333; border-bottom: 2px solid #333; padding: 0.75rem; text-align: center;">Data Type</th>
+                <th style="border-top: 4px solid #333; border-bottom: 2px solid #333; padding: 0.75rem; text-align: center;">Source</th>
+                <th style="border-top: 4px solid #333; border-bottom: 2px solid #333; padding: 0.75rem; text-align: center;">Samples</th>
+                <th style="border-top: 4px solid #333; border-bottom: 2px solid #333; padding: 0.75rem; text-align: center;">Purpose</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="border-bottom: 1px solid #ddd; padding: 0.75rem; text-align: left; vertical-align: middle;">Navigation (Oracle)</td>
+                <td style="border-bottom: 1px solid #ddd; padding: 0.5rem; text-align: center; vertical-align: middle;">
+                  <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center;">
+                    <div style="background: #dfdfdf; border-radius: 8px; padding: 0.5rem 0.5rem; box-shadow: 0 3px 9px rgba(0,0,0,0.1);">R2R</div>
+                    <div style="background: #dfdfdf; border-radius: 8px; padding: 0.5rem 0.5rem; box-shadow: 0 3px 9px rgba(0,0,0,0.1);">R2R-EnvDrop</div>
+                    <div style="background: #dfdfdf; border-radius: 8px; padding: 0.5rem 0.5rem; box-shadow: 0 3px 9px rgba(0,0,0,0.1);">RxR</div>
+                    <div style="background: #dfdfdf; border-radius: 8px; padding: 0.5rem 0.5rem; box-shadow: 0 3px 9px rgba(0,0,0,0.1);">ScaleVLN (subset)</div>
+                  </div>
+                </td>
+                <td style="border-bottom: 1px solid #ddd; padding: 0.75rem; text-align: center; vertical-align: middle;">450K</td>
+                <td style="border-bottom: 1px solid #ddd; padding: 0.75rem; text-align: center; vertical-align: middle;">General navigation skills</td>
+              </tr>
+              <tr>
+                <td style="border-bottom: 1px solid #ddd; padding: 0.75rem; text-align: left; vertical-align: middle;">Navigation (DAgger)</td>
+                <td style="border-bottom: 1px solid #ddd; padding: 0.75rem; text-align: center; vertical-align: middle;">-</td>
+                <td style="border-bottom: 1px solid #ddd; padding: 0.75rem; text-align: center; vertical-align: middle;">240K</td>
+                <td style="border-bottom: 1px solid #ddd; padding: 0.75rem; text-align: center; vertical-align: middle;">Error correction</td>
+              </tr>
+              <tr>
+                <td style="border-bottom: 1px solid #ddd; padding: 0.75rem; text-align: left; vertical-align: middle;">Video QA</td>
+                <td style="border-bottom: 1px solid #ddd; padding: 0.5rem; text-align: center; vertical-align: middle;">
+                  <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center;">
+                    <div style="background: #dfdfdf; border-radius: 8px; padding: 0.5rem 0.5rem; box-shadow: 0 3px 9px rgba(0,0,0,0.1);">LLaVA-Video-178K</div>
+                    <div style="background: #dfdfdf; border-radius: 8px; padding: 0.5rem 0.5rem; box-shadow: 0 3px 9px rgba(0,0,0,0.1);">ScanQA</div>
+                  </div>
+                </td>
+                <td style="border-bottom: 1px solid #ddd; padding: 0.75rem; text-align: center; vertical-align: middle;">248K</td>
+                <td style="border-bottom: 1px solid #ddd; padding: 0.75rem; text-align: center; vertical-align: middle;">Spatiotemporal reasoning</td>
+              </tr>
+              <tr>
+                <td style="border-bottom: 4px solid #333; padding: 0.75rem; text-align: left; vertical-align: middle;">Interleaved Image-Text</td>
+                <td style="border-bottom: 4px solid #333; padding: 0.5rem; text-align: center; vertical-align: middle;">
+                  <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center;">
+                    <div style="background: #dfdfdf; border-radius: 8px; padding: 0.5rem 0.5rem; box-shadow: 0 3px 9px rgba(0,0,0,0.1);">MMC4</div>
+                  </div>
+                </td>
+                <td style="border-bottom: 4px solid #333; padding: 0.75rem; text-align: center; vertical-align: middle;">230K</td>
+                <td style="border-bottom: 4px solid #333; padding: 0.75rem; text-align: center; vertical-align: middle;">Multi-turn dialog</td>
+              </tr>
+            </tbody>
+          </table>
+        </div> -->
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- simulation experiments -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="rows is-centered has-text-centered ">
+      <div class="row is-full-width has-text-centered">
+        <h2 class="title is-3 is-size-5-mobile title-with-lines">Evaluation in Simulation</h2>
+        
+        <h3 class="title is-4 has-text-centered is-size-5-mobile">Quantitative Results on VLN-CE Benchmark</h3>
+        <div>
+          <img src="./static/images/tab_vlnce.png" alt="method" style="width: 80%;"></img>
+        </div>
+        <text style="font-size: 12px; color: #666;">Evaluation results on R2R-CE and RxR-CE benchmarks.</text>
+
+        <br/>
+        <br/>
+
+        <div class="content has-text-justified" style="font-size: 17px;margin: 0 auto;margin-bottom: 1em;">
+          <p>
+            we compare DualVLN under the VLN-CE evaluation against three representative categories of baselines:
+          </p>
+          <ul>
+            <li><strong>Multi-sensor methods</strong> methods that incorporate panoramic RGB, odometry, and depth (e.g., HPN+DN, CMA, GridMM, ETPNav);</li>
+            <li><strong>VLM-free methods</strong> trained on single first-person RGB and depth (e.g., CM2, LAW, WS-MGMap);</li>
+            <li><strong>Video-LLM based methods</strong> relying solely on single-view RGB (e.g., NaVid, MapNav, NaVILA, UniNaVid, StreamVLN).</li>
+          </ul>
+          <p>
+            With only first-person RGB inputs, DualVLN achieves substantial gains over all prior RGB-based approaches, highlighting the strength of our dual-system design.
+          </p>
+        </div>
+
+        <br/>
+        <br/>
+
+
+        <h3 class="title is-4 has-text-centered is-size-5-mobile">Quantitative Results on VLN-PE Benchmark</h3>
+        <div>
+          <img src="./static/images/tab_vlnpe.png" alt="method" style="width: 80%;"></img>
+        </div>
+        <text style="font-size: 12px; color: #666;">Evaluation results on VLN-PE benchmark.</text>
+
+        <br/>
+        <br/>
+
+        <div class="content has-text-justified" style="font-size: 17px;margin: 0 auto;margin-bottom: 1em;">
+          <p>
+            Despite not being fine-tuned on VLN-PE trajectories, DualVLN surpasses all baselines, including those trained on VLN-PE and VLM-based methods.
+          </p>
+        </div>
+
+        <br/>
+        <br/>
+
+        <h3 class="title is-4 has-text-centered is-size-5-mobile">Social-VLN Benchmark</h3>
+        <div>
+          <img src="./static/images/example_socialvln.jpg" alt="method" style="width: 100%;"></img>
+        </div>
+        <text style="font-size: 12px; color: #666;">Overview of the Social-VLN benchmark.</text>
+
+        <br/>
+        <br/>
+
+        <div>
+          <img src="./static/images/tab_socialvln.png" alt="method" style="width: 80%;"></img>
+        </div>
+        <text style="font-size: 12px; color: #666;">Comparison of DualVLN and StreamVLN on standard R2R VLN and Social-VLN.</text>
+        
+        <br/>
+        <br/>
+
+        <div class="content has-text-justified" style="font-size: 17px;margin: 0 auto;margin-bottom: 1em;">
+          <p>
+            We also introduce the first Social-VLN benchmark to evaluate navigation models on social awareness and task recovery in dynamic environments, where
+            humanoid agents are placed along task trajectories.
+          </p>
+          <p>
+            We evaluate DualVLN and StreamVLN on the Social-VLN benchmark. StreamVLN is selected as the baseline due to its low action latency, which allows it to react to dynamic obstacles to some extent.
+            As shown in table above, both methods experience substantial performance drops — e.g., the success rate of DualVLN decreases by about 27% and that of StreamVLN by 26% compared to their results on standard VLN tasks — highlighting the increased difficulty of Social-VLN setting.          
+          </p>
+        </div>
+
+        <br/>
+
+        <h3 class="title is-4 has-text-centered is-size-5-mobile">VLN Evaluation Examples</h3>
+
+          <div class="container is-full-width">
+            <div id="results-carousel" class="carousel results-carousel">
+              <div class="item item-box">
+                <video poster="" id="1" autoplay controls muted loop playsinline height="100%">
+                  <source src="./static/videos/sim0.mp4"
+                          type="video/mp4">
+                </video>
+              </div>
+              <div class="item item-drawer">
+                <video poster="" id="1" autoplay controls muted loop playsinline height="100%">
+                  <source src="./static/videos/sim1.mp4"
+                          type="video/mp4">
+                </video>
+              </div>
+              <div class="item item-dustpan">
+                <video poster="" id="1" autoplay controls muted loop playsinline height="100%">
+                  <source src="./static/videos/sim2.mp4"
+                          type="video/mp4">
+                </video>
+              </div>
+              <!-- <div class="item item-fridge">
+                <video poster="" id="1" autoplay controls muted loop playsinline height="100%">
+                  <source src="./static/videos/sim3.mp4"
+                          type="video/mp4">
+                </video>
+              </div> -->
+            </div>
+    
+            <p>VLN-CE Evaluation in Habitat Simulator. Green curves are GT.</p>
+          </div>
+          
+          <div class="container is-full-width">
+            <div id="results-carousel" class="carousel results-carousel ">
+                <video poster="" id="1" autoplay controls muted loop playsinline max-width="100px">
+                  <source src="./static/videos/VLNPE1.mp4"
+                          type="video/mp4">
+                </video>
+                <video poster="" id="2" autoplay controls muted loop playsinline max-width="100px">
+                  <source src="./static/videos/VLNPE2.mp4"
+                          type="video/mp4">
+                </video>
+                <video poster="" id="3" autoplay controls muted loop playsinline max-width="100px">
+                  <source src="./static/videos/VLNPE3.mp4"
+                          type="video/mp4">
+                </video>
+                <video poster="" id="4" autoplay controls muted loop playsinline max-width="100px">
+                  <source src="./static/videos/VLNPE4.mp4"
+                          type="video/mp4">
+                </video>
+                <video poster="" id="5" autoplay controls muted loop playsinline max-width="100px">
+                  <source src="./static/videos/VLNPE5.mp4"
+                          type="video/mp4">
+                </video>
+                <video poster="" id="6" autoplay controls muted loop playsinline max-width="100px">
+                  <source src="./static/videos/VLNPE6.mp4"
+                          type="video/mp4">
+                </video>
+            </div>
+    
+            <p>VLN-PE Evaluation with physics simulation on a Unitree H1 robot.</p>
+          </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- realworld experiments -->
+<section class="section is-small">
+  <div class="container is-max-desktop">
+    
+    <h2 class="title is-3 has-text-centered is-size-5-mobile title-with-lines">Real-World In-the-Wild Testing</h2>
+
+    <h3 class="title is-4 has-text-centered is-size-5-mobile">Baseline Comparison</h3>
+    <div class="columns is-centered is-vcentered">
+      <div class="column">
+        <div class="card">
+          <div class="card-image">
+            <video poster="" autoplay="" controls="" muted="" loop="">
+              <source src="static/videos/baseline_navila.mp4" type="video/mp4">
+            </video>
+            <div class="card-content has-text-centered">
+              <p class="title is-5">NaVILA</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="card">
+          <div class="card-image">
+            <video poster="" autoplay="" controls="" muted="" loop="">
+              <source src="static/videos/baseline_dualvln.mp4" type="video/mp4">
+            </video>
+            <div class="card-content has-text-centered">
+              <p class="title is-5">DualVLN</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="card">
+          <div class="card-image">
+            <video poster="" autoplay="" controls="" muted="" loop="">
+              <source src="static/videos/baseline_streamvln.mp4" type="video/mp4">
+            </video>
+            <div class="card-content has-text-centered">
+              <p class="title is-5">StreamVLN</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="has-text-centered">
+      <img src="./static/images/exp_realworld.jpg" class="interpolation-image" alt="Interpolate start reference image.">
+      <text style="font-size: 12px; color: #666;">Real-World evaluation results.</text>
+    </div>
+
+    <br/>
+    <br/>
+
+    <h3 class="title is-4 has-text-centered is-size-5-mobile">Zero-Shot Transfer to Long-Horizon Navigation</h3>
+    <div class="columns is-multiline">
+
+      <div class="column is-half">
+        <div class="card">
+          <div class="card-image">
+            <video controls muted loop playsinline autoplay>
+              <source src="./static/videos/v1.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="card-content has-text-centered">
+            <p class="title is-5">Indoor Complex Instruction Following</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="column is-half">
+        <div class="card">
+          <div class="card-image">
+            <video controls muted loop playsinline autoplay>
+              <source src="./static/videos/v2.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="card-content has-text-centered">
+            <p class="title is-5">Outdoor Autonomous Exploration</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <br/>
+
+    <h3 class="title is-4 has-text-centered is-size-5-mobile">Clutter Environment Collision Avoidance</h3>
+    <div class="columns is-multiline">
+      <div class="column is-half">
+        <div class="card">
+          <div class="card-image">
+            <video controls muted loop playsinline autoplay>
+              <source src="./static/videos/demo_clutter1.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="card-content has-text-centered">
+            <p><b>Instruction:</b> Walk through the <b>tables</b> and <b>chairs</b>, turn left into the café, and stop at the <b>coffee counter.</b></p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="column is-half">
+        <div class="card">
+          <div class="card-image">
+            <video controls muted loop playsinline autoplay>
+              <source src="./static/videos/demo_clutter2.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="card-content has-text-centered">
+            <p><b>Instruction:</b> </b> Walk through the <b>bamboo forest</b> and turn left. Reach a <b>man</b> sitting on the <b>sofa</b>.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <br/>
+
+    <h3 class="title is-4 has-text-centered is-size-5-mobile">Semantics Understanding</h3>
+    <div class="columns is-multiline">
+      <div class="column is-half">
+        <div class="card">
+          <div class="card-image">
+            <video controls muted loop playsinline autoplay>
+              <source src="./static/videos/demo_semantic1.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="card-content has-text-centered">
+            <p><b>Instruction:</b> Walk straight ahead, turn right after seeing the <b>billiard table</b>, and enter the room with <b>shelves</b>.          </p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="column is-half">
+        <div class="card">
+          <div class="card-image">
+            <video controls muted loop playsinline autoplay>
+              <source src="./static/videos/demo_semantic3.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="card-content has-text-centered">
+            <p><b>Instruction:</b>Walk out of this house and find a <b>trash bin</b>.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="column is-half">
+        <div class="card">
+          <div class="card-image">
+            <video controls muted loop playsinline autoplay>
+              <source src="./static/videos/demo_semantic2.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="card-content has-text-centered">
+            <p><b>Instruction:</b> Enter the office area. Immediately turn left and continue straight. Then make a right turn. Stop at the <b>workstation</b> near the <b>whiteboard</b>.</p>
+          </div>
+        </div>
+      </div>
+      
+      
+      <div class="column is-half">
+        <div class="card">
+          <div class="card-image">
+            <video controls muted loop playsinline autoplay>
+              <source src="./static/videos/demo_semantic4.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="card-content has-text-centered">
+            <p><b>Instruction:</b> Walk towards the <b>orange coffee sculpture </b> and go upstairs. Then keep walking straight and turn right at the end. After that turn left and walking to the <b>man with a black umbrella</b> . Stop in front of the <b>doors with red handles</b>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br/>
+
+  </div>
+</section> 
+
+
+
+
+
+
+<!-- Paper poster -->
+<!-- TODO: Replace with your poster PDF -->
+<!-- <section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title">Poster</h2>
+
+      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
+          </iframe>
+        
+      </div>
+    </div>
+  </section> -->
+<!--End paper poster -->
+
+
+
+<!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <div class="bibtex-header">
+        <h2 class="title">BibTeX</h2>
+        <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
+          <i class="fas fa-copy"></i>
+          <span class="copy-text">Copy</span>
+        </button>
+      </div>
+      <pre id="bibtex-code"><code>@article{YourPaperKey2024,
+  title={Your Paper Title Here},
+  author={First Author and Second Author and Third Author},
+  journal={Conference/Journal Name},
+  year={2024},
+  url={https://your-domain.com/your-project-page}
+}</code></pre>
+    </div>
+</section>
+<!--End BibTex citation -->
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>
